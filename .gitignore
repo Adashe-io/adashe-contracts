@@ -2,3 +2,12 @@ node_modules
 contracts/.old
 contracts/.tests
 .env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+
