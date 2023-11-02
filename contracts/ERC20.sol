@@ -1,11 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
-import "./IERC20.sol";
-import "./extensions/IERC20Metadata.sol";
-import "./utils/Context.sol";
-import "./access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
+import "@openzeppelin/contracts/utils/Context.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @dev Implementation of the {IERC20} interface.
@@ -109,6 +108,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata, Ownable {
     }
 
     function setTaxFeePercent(uint256 taxFee) external onlyOwner {
+        require(taxFee <= 25, "Cannot Exceed 25% Fees");
         _taxFee = taxFee;
     }
 
