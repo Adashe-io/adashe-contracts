@@ -17,6 +17,7 @@ contract DeployFactory {
                 revert(0, 0)
             }
         }
+
         emit Deploy(tokenContractAddress);
     }
 }
