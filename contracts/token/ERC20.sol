@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
 import "@openzeppelin/contracts/utils/Context.sol";
@@ -60,10 +60,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata, Ownable {
      * All two of these values are immutable: they can only be set once during
      * construction.
      */
-    constructor(
-        string memory name_,
-        string memory symbol_
-    ) Ownable(msg.sender) {
+    constructor(string memory name_, string memory symbol_) Ownable() {
         _name = name_;
         _symbol = symbol_;
 
