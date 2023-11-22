@@ -1,4 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
+require("@nomicfoundation/hardhat-verify");
+
 require("dotenv").config();
 const { task } = require("hardhat/config");
 const checkNonce = require("./utils/checkNonce");
@@ -10,6 +12,7 @@ const {
   API_URL_POLYGON_KEY,
   PRIVATE_KEY,
   MAINNET_PRIVATE_KEY,
+  ETHERSCAN_API_URL,
 } = process.env;
 
 task(
@@ -45,5 +48,11 @@ module.exports = {
       url: API_URL_MUMBAI,
       accounts: [`0x${PRIVATE_KEY}`],
     },
+  },
+  etherscan: {
+    apiKey: ETHERSCAN_API_URL,
+  },
+  sourcify: {
+    enabled: true,
   },
 };
