@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "npx hardhat compile",
-    "deploy-testnets": "npx hardhat run scripts/deployToken.js --network goerli && npx hardhat run scripts/deployToken.js --network sep`olia && npx hardhat run scripts/deployToken.js --network mumbai"
+    "deploy-contracts-testnets": "npx hardhat run scripts/deployToken.js --network goerli && npx hardhat run scripts/deployToken.js --network mumbai",
+    "deploy-contracts-mainnets": "npx hardhat run scripts/deployToken.js --network ethmainnet && npx hardhat run scripts/deployToken.js --network polygon",
+    "deploy-factory-testnets": "npx hardhat run scripts/deployFactoryContract.js --network goerli && npx hardhat run scripts/deployFactoryContract.js --network sepolia && npx hardhat run scripts/deployFactoryContract.js --network mumbai"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.1",
     "hardhat": "^2.17.3"
   }
 }

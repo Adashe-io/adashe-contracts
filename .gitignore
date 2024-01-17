@@ -5,6 +5,7 @@ contracts/.tests
 .env
 coverage
 coverage.json
+main-contracts
 typechain
 typechain-types
 

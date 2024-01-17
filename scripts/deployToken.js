@@ -1,7 +1,8 @@
 const hre = require("hardhat");
 
 async function main() {
-  const contract = await hre.ethers.deployContract("Adashe", []);
+  const owner = "0xf81f51A89C9d2a8a25D184dB2046b680eDF0286f";
+  const contract = await hre.ethers.deployContract("Adashe", [owner]);
   console.log("Deploying contract....");
   await contract.waitForDeployment();
 
